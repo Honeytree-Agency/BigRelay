@@ -1,0 +1,26 @@
+#navbar {
+    width: 100%;
+    height: 75px;
+    // border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+    @media screen and (min-width: 850px) {
+        height: initial;
+        border-bottom: none;
+    }
+
+    .container {
+        height: inherit;
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto 75px;
+        align-items: center;
+
+        @media screen and (min-width: 850px) {
+            height: initial;
+            align-items: initial;
+        }
+
+        @import 'navbar/logo';
+        @import 'navbar/toggle';
+    }
+}

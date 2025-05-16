@@ -1,0 +1,8 @@
+#textContent {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-gap: 50px;
+
+    @import 'textContent/slogan';
+    @import 'textContent/description';
+}

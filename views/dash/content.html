@@ -1,0 +1,126 @@
+{% include './shared/header.html' %}
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<!-- THE CONTENT -->
+<main id="content" data-page="/dash/content">
+    <!-- THE PAGE TITLE -->
+    <h1 id="page-title"><i class="fa-regular fa-file"></i> Content</h1>
+    <!-- END PAGE TITLE -->
+
+    <!-- THE CONTENT PAGES -->
+    <div id="content-pages">
+        <!-- THE CONTENT HEADINGS -->
+        <div id="content-pages-headings">
+            <p>Title</p>
+            <p>Updated on</p>
+            <p>Actions</p>
+        </div>
+        <!-- END CONTENT HEADINGS -->
+
+        <!-- THE CONTENT ITEMS -->
+        <div id="content-pages-items">
+            {% for page in pages %}
+            <div class="content-pages-item">
+                <p class="page-quick-link content-pages-item-title page-show" data-id="{{ page.id }}">
+                    {{ page.title }}
+                </p>
+                <p class="content-pages-item-date">{{ page.updated_at_str }}</p>
+                <div class="content-pages-item-quickies">
+                    <i
+                        class="page-quick-link fa-regular fa-pen-to-square page-edit"
+                        data-id="{{ page.id }}"
+                        title="Edit page"></i>
+                    <i
+                        class="page-quick-link fa-regular fa-eye page-show"
+                        data-id="{{ page.id }}"
+                        title="View page"></i>
+                    <i
+                        class="page-quick-link fa-regular fa-trash-can page-delete"
+                        data-id="{{ page.id }}"
+                        title="View page"></i>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- END CONTENT ITEMS -->
+    </div>
+    <!-- END CONTENT PAGES -->
+
+    <!-- THE CREATE PAGE -->
+    <button id="new-page"><i class="fa-solid fa-plus"></i> New Page</button>
+    <!-- END CREATE PAGE -->
+</main>
+<!-- END CONTENT -->
+
+<!-- THE COVER -->
+<div id="overlay-cover"></div>
+<!-- END COVER -->
+
+<!-- THE CONFIRM DELETE -->
+<div id="confirm-delete-modal">
+    <p id="confirm-delete-message">
+        Are you sure you want to delete the <strong id="confirm-delete-page-title">About</strong> page?
+    </p>
+
+    <div id="confirm-delete-buttons">
+        <button id="forget-delete">Cancel</button>
+        <button id="confirm-delete" data-id="3">Purge It!</button>
+    </div>
+</div>
+<!-- END CONFIRM DELETE -->
+
+<!-- THE UPDATE PAGE -->
+<div id="update-page">
+    <h3 id="update-page-title">Update Page</h3>
+
+    <form action="/dash/content/update" method="post">
+        <input type="number" name="id" id="update-page-id" />
+        <input type="text" name="title" id="update-page-title-mast" placeholder="Page title..." />
+        <input type="text" name="slug" id="update-page-slug" placeholder="Page slug..." />
+        <textarea
+            name="content"
+            id="update-page-content"
+            class="active"
+            placeholder="Type page content here..."></textarea>
+        <div id="update-page-compiled"></div>
+        <div id="update-page-buttons">
+            <button type="reset" id="forget-update">Close</button>
+            <button id="compile-update" class="active"><i class="fa-regular fa-eye"></i></button>
+            <button id="compile-update-not"><i class="fa-regular fa-eye-slash"></i></button>
+            <button type="submit">Update</button>
+        </div>
+    </form>
+</div>
+<!-- END UPDATE PAGE -->
+
+<!-- THE CREATE PAGE -->
+<div id="create-page">
+    <h3 id="create-page-title">Create Page</h3>
+
+    <form action="/dash/content/create" method="post">
+        <input type="text" name="title" id="create-page-title-mast" placeholder="Type page title..." />
+        <textarea
+            name="content"
+            id="create-page-content"
+            class="active"
+            placeholder="Type page content here..."></textarea>
+        <div id="create-page-compiled"></div>
+        <div id="create-page-buttons">
+            <button type="reset" id="forget-create">Close</button>
+            <button id="compile-page" class="active"><i class="fa-regular fa-eye"></i></button>
+            <button id="compile-page-not"><i class="fa-regular fa-eye-slash"></i></button>
+            <button type="submit">Create</button>
+        </div>
+    </form>
+</div>
+<!-- END CREATE PAGE -->
+
+<script src="/js/dash/content_view_page_action.js"></script>
+<script src="/js/dash/content_delete_page_action.js"></script>
+<script src="/js/dash/content_update_page_action.js"></script>
+<script src="/js/dash/content_preview_page_action.js"></script>
+<script src="/js/dash/content_create_page_action.js"></script>
+<script src="/js/dash/content_preview_new_page_action.js"></script>
+
+{% include './shared/footer.html' %}

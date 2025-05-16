@@ -1,0 +1,38 @@
+@import '../shared/fonts';
+@import '../shared/reset';
+
+$white: rgba(255, 255, 255, 1);
+$white90: rgba(255, 255, 255, 0.9);
+$white80: rgba(255, 255, 255, 0.8);
+$white70: rgba(255, 255, 255, 0.7);
+$white60: rgba(255, 255, 255, 0.6);
+
+$blue: #4065c5;
+$darkblue: #123293;
+$lightblue: #7198f8;
+$lightblue30: rgba(113, 152, 248, 0.3);
+
+$black: rgba(0, 0, 0, 1);
+$black50: rgba(0, 0, 0, 0.5);
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 25px;
+    max-width: 850px;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: $white;
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-gap: 50px;
+
+    @import 'shared/header';
+    @import 'shared/article';
+    @import 'home/endpoints';
+    @import 'home/connections';
+    @import 'shared/footer';
+}

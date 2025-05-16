@@ -1,0 +1,10 @@
+#connections {
+    .container {
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-gap: 25px;
+
+        @import 'connections/metadata';
+        @import 'connections/connectedDomains';
+    }
+}

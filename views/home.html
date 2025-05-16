@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{{ settings.title }} - {{ settings.slogan }}</title>
+        <link rel="stylesheet" href="/css/home/styles.css" />
+    </head>
+    <body>
+        <!-- THE HEADER -->
+        <header id="header">
+            <!-- THE NAVBAR -->
+            <section id="navbar">
+                <!-- THE CONTAINER -->
+                <div class="container">
+                    <!-- THE LOGO -->
+                    <section id="logo">
+                        <h1>
+                            <a href="/">{{ settings.title }}</a>
+                        </h1>
+                    </section>
+                    <!-- END LOGO -->
+
+                    <!-- THE TOGGLE -->
+                    <button id="navToggle" onclick="showMenu()">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                    </button>
+                    <!-- END TOGGLE -->
+                </div>
+                <!-- END CONTAINER -->
+            </section>
+            <!-- END NAVBAR -->
+
+            <!-- THE ACTION CENTER -->
+            <section id="actionCenter">
+                <!-- THE CONTAINER -->
+                <div class="container">
+                    <!-- THE TEXT CONTENT -->
+                    <section id="textContent">
+                        <!-- THE SLOGAN -->
+                        <h2 id="slogan">{{ settings.slogan }}</h2>
+                        <!-- END SLOGAN -->
+
+                        <!-- THE DESCRIPTION -->
+                        <h3 id="description">{{ settings.description }}</h3>
+                        <!-- END DESCRIPTION -->
+                    </section>
+                    <!-- END TEXT CONTENT -->
+
+                    <!-- THE CALL-TO-ACTION -->
+                    <section id="callToAction">
+                        <!-- THE CALL -->
+                        <p id="call">be awesome</p>
+                        <!-- END CALL -->
+
+                        <!-- THE ACTION -->
+                        <a href="{{ settings.sponsorLink }}" id="action"> {{ settings.sponsorText }} </a>
+                        <!-- END ACTION -->
+                    </section>
+                    <!-- END CALL-TO-ACTION -->
+                </div>
+                <!-- END CONTAINER -->
+            </section>
+            <!-- END ACTION CENTER -->
+
+            <!-- THE MENU -->
+            <nav id="menu">
+                <button id="toggleNav" onclick="hideMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <section id="menuPages">
+                    <a href="/" class="menu-item">Home</a>
+                    <a href="/about" class="menu-item">About Us</a>
+                    <!-- <a href="/contact" class="menu-item">Contact Us</a> -->
+                </section>
+
+                <section id="menuLegal">
+                    <a href="/privacy-policy" class="menu-item">Privacy Policy</a>
+                    <a href="/terms-of-service" class="menu-item">Terms of Service</a>
+                </section>
+
+                <section id="aesthetics">
+                    <div id="bar"></div>
+                    <div id="circle"></div>
+                    <div id="largeCircle"></div>
+                </section>
+            </nav>
+            <!-- END MENU -->
+        </header>
+        <!-- END HEADER -->
+
+        <!-- THE ENDPOINTS -->
+        <section id="endpoints">
+            <!-- THE CONTAINER -->
+            <div class="container">
+                <!-- THE PUBLIC ENDPOINT -->
+                <article class="endpoint">
+                    <h3 class="endpointTitle">Public Delivery Endpoint</h3>
+                    <h2 class="endpointURL" onclick="copyEndpointURL('{{ settings.url }}/inbox')">
+                        {{ settings.url }}/inbox &nbsp;&nbsp;
+                        <i class="fa-regular fa-clipboard"></i>
+                    </h2>
+                    <p class="endpointNote">* For Mastodon, Misskey, and their forks</p>
+                    <div class="endpointCircle"></div>
+                </article>
+                <!-- END PUBLIC ENDPOINT -->
+
+                <!-- THE LITEPUB ENDPOINT -->
+                <article class="endpoint">
+                    <h3 class="endpointTitle">LitePub Delivery Endpoint</h3>
+                    <h2 class="endpointURL" onclick="copyEndpointURL('{{ settings.url }}/actor')">
+                        {{ settings.url }}/actor &nbsp;&nbsp;
+                        <i class="fa-regular fa-clipboard"></i>
+                    </h2>
+                    <p class="endpointNote">* For Pleroma and its fork software</p>
+                    <div class="endpointCircle"></div>
+                </article>
+                <!-- END LITEPUB ENDPOINT -->
+            </div>
+            <!-- END CONTAINER -->
+        </section>
+        <!-- END ENDPOINTS -->
+
+        <!-- THE CONNECTIONS -->
+        <main id="connections">
+            <!-- THE CONTAINER -->
+            <div class="container">
+                <!-- THE METADATA -->
+                <section id="metadata">
+                    <!-- THE TOTAL CONNECTIONS -->
+                    <section id="totalConnections">
+                        <p><span>Connected</span> instances: <strong>{{ connections.total }}</strong></p>
+                    </section>
+                    <!-- END TOTAL CONNECTIONS -->
+
+                    <!-- THE UPDATED TIME -->
+                    <section id="updatedTime">
+                        <p>Updated {{ updated_amount }} {{ updated_modifier }} ago</p>
+                    </section>
+                    <!-- END UPDATED TIME -->
+                </section>
+                <!-- END METADATA -->
+
+                <!-- THE CONNECTED DOMAINS -->
+                <section id="connectedDomains">
+                    {% for domain in connections.domains %}
+                    <a href="https://{{ domain }}" class="domain">
+                        {{ domain }}
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                    {% endfor %}
+                </section>
+                <!-- END CONNECTED DOMAINS -->
+            </div>
+            <!-- END CONTAINER -->
+        </main>
+        <!-- END CONNECTIONS -->
+
+        <!-- THE FOOTER -->
+        <footer id="footer">
+            <!-- THE CONTAINER -->
+            <div class="container">
+                <!-- THE COPYRIGHT -->
+                <p id="copyright">
+                    This ActivityPub Relay is a project of
+                    <a href="https://honeytreetech.com" id="copyright-owner"><span>Honeytree Technologies</span>.</a>
+                </p>
+                <!-- END COPYRIGHT -->
+
+                <!-- THE LEGAL NAVIGATION -->
+                <nav id="legal">
+                    <a href="/privacy-policy" class="menu-item">Privacy Policy</a>
+                    <a href="/terms-of-service" class="menu-item">Terms of Service</a>
+                </nav>
+                <!-- END LEGAL NAVIGATION -->
+            </div>
+            <!-- END CONTAINER -->
+        </footer>
+        <!-- END FOOTER -->
+        <script src="/js/home/menu.js"></script>
+        <script src="/js/home/main.js"></script>
+    </body>
+</html>

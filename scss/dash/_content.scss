@@ -1,0 +1,30 @@
+#content {
+    padding: 25px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    #page-title {
+        font-size: 28px;
+        font-weight: 600;
+        text-transform: uppercase;
+
+        margin-bottom: 75px;
+
+        i {
+            margin-right: 10px;
+        }
+    }
+
+    @import 'content/settings';
+    @import 'content/content';
+}
+
+@import 'content/modals/overlay';
+@import 'content/modals/delete-modal';
+@import 'content/modals/create-page';
+@import 'content/modals/update-page';

@@ -1,0 +1,9 @@
+#metadata {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 7px;
+    border-bottom: 2px solid $black50;
+
+    @import 'metadata/totalConnections';
+    @import 'metadata/updatedTime';
+}

@@ -1,0 +1,10 @@
+#slogan {
+    color: $white90;
+    font-size: 18px;
+    font-weight: 600;
+
+    @media screen and (min-width: 850px) {
+        text-align: left;
+        font-weight: 500;
+    }
+}

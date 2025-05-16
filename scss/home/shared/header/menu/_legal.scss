@@ -1,0 +1,18 @@
+#menuLegal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .menu-item {
+        color: $white60;
+        font-size: 14px;
+        text-decoration: none;
+
+        &:last-child {
+            text-align: right;
+        }
+
+        &:hover {
+            color: $lightblue;
+        }
+    }
+}

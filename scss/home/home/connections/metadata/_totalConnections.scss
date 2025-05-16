@@ -1,0 +1,14 @@
+#totalConnections {
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+    text-align: left;
+
+    span {
+        display: none;
+    }
+
+    strong {
+        color: $blue;
+    }
+}

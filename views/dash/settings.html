@@ -1,0 +1,98 @@
+{% include './shared/header.html' %}
+
+<!-- THE CONTENT -->
+<main id="content" data-page="/dash/settings">
+    <!-- THE PAGE TITLE -->
+    <h1 id="page-title"><i class="fa-solid fa-gear"></i> Settings</h1>
+    <!-- END PAGE TITLE -->
+
+    <!-- THE SETTING TABS -->
+    <div id="setting-tabs">
+        <!-- THE SETTING SWITCHERS -->
+        <div id="setting-tab-switchers">
+            <button class="setting-tab-switcher active" data-tab="user">User Settings</button>
+            <button class="setting-tab-switcher" data-tab="backend">Backend Settings</button>
+            <button class="setting-tab-switcher" data-tab="relay">Relay Settings</button>
+        </div>
+        <!-- END SETTING SWITCHERS -->
+
+        <!-- THE USER SETTINGS -->
+        <section class="setting-tab active" data-tab="user">
+            <h2 class="setting-tab-heading">User Settings</h2>
+
+            <form action="/dash/settings/user" method="post">
+                <input type="number" name="id" id="id" value="{{ user.id }}" required />
+                <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    placeholder="Username..."
+                    value="{{ user.username }}"
+                    required />
+                <input type="password" name="password" id="password" placeholder="Password..." required />
+                <button type="submit">Update</button>
+            </form>
+        </section>
+        <!-- END USER SETTINGS -->
+
+        <!-- THE BACKEND SETTINGS -->
+        <section class="setting-tab" data-tab="backend">
+            <h2 class="setting-tab-heading">Backend Settings</h2>
+
+            <form action="/dash/settings/backend" method="post">
+                <input
+                    type="text"
+                    name="title"
+                    id="backend-title"
+                    placeholder="Site title..."
+                    value="{{ settings.title }}"
+                    required />
+                <input
+                    type="text"
+                    name="slogan"
+                    id="backend-slogan"
+                    placeholder="Site slogan..."
+                    value="{{ settings.slogan }}"
+                    required />
+                <input
+                    type="url"
+                    name="url"
+                    id="site-url"
+                    placeholder="Site URL..."
+                    value="{{ settings.url }}"
+                    required />
+                <textarea name="description" id="site-description" placeholder="Site description..." required>
+{{ settings.description }}</textarea
+                >
+                <input
+                    type="url"
+                    name="sponsorLink"
+                    id="sponsor-link"
+                    placeholder="Sponsor Link..."
+                    value="{{ settings.sponsorLink }}"
+                    required />
+                <input
+                    type="text"
+                    name="sponsorText"
+                    id="sponsor-text"
+                    placeholder="Sponsor Text..."
+                    value="{{settings.sponsorText}}"
+                    required />
+                <button type="submit">Update</button>
+            </form>
+        </section>
+        <!-- END BACKEND SETTINGS -->
+
+        <!-- THE RELAY SETTINGS -->
+        <section class="setting-tab" data-tab="relay">
+            <h2 class="setting-tab-heading">Relay Settings</h2>
+        </section>
+        <!-- END RELAY SETTINGS -->
+    </div>
+    <!-- END SETTING TABS -->
+</main>
+<!-- END CONTENT -->
+
+<script src="/js/dash/settings_tab_switcher.js"></script>
+
+{% include './shared/footer.html' %}

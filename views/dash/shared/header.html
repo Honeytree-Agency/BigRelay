@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dashboard | {{ settings.title }} - {{ settings.slogan }}</title>
+        <link rel="stylesheet" href="/css/dash/styles.css" />
+    </head>
+    <body>
+        <!-- THE CONTAINER -->
+        <div class="container">
+            <!-- THE SIDEBAR -->
+            <div id="sidebar">
+                <!-- THE BRANDING -->
+                <section id="branding">
+                    <h2 id="title">{{ settings.title }}</h2>
+                    <p id="slogan">Administration Dashboard</p>
+                </section>
+                <!-- END BRANDING -->
+
+                <!-- THE MENU -->
+                <nav id="menu">
+                    <div id="menu-container">
+                        <a href="/dash" class="menu-item"><i class="fa-solid fa-chalkboard"></i> Dash</a>
+                        <a href="/dash/settings" class="menu-item"><i class="fa-solid fa-gear"></i> Settings</a>
+                        <a href="/dash/content" class="menu-item"><i class="fa-regular fa-file"></i> Content</a>
+                        <a href="/dash/navigation" class="menu-item"><i class="fa-solid fa-bars"></i> Navigation</a>
+                    </div>
+                </nav>
+                <!-- END MENU -->
+
+                <!-- THE QUICKIES -->
+                <section id="quickies">
+                    <div id="quickies-left">
+                        <a href="/dash/settings" class="quickie-item"><i class="fa-solid fa-gear"></i></a>
+                        <a href="/" class="quickie-item"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <div id="quickies-right">
+                        <a href="/auth/logout" class="quickie-item">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        </a>
+                    </div>
+                </section>
+                <!-- END QUICKIES -->
+            </div>
+            <!-- END SIDEBAR -->

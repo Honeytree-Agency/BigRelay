@@ -1,0 +1,94 @@
+#content-pages {
+    display: grid;
+    grid-template-rows: 50px auto;
+
+    #content-pages-headings {
+        height: 50px;
+        padding: 0 15px;
+        display: grid;
+        grid-template-columns: 1.75fr 1fr 0.5fr;
+        grid-gap: 25px;
+        align-items: center;
+
+        p {
+            color: rgba(0, 0, 0, 0.5);
+            font-weight: 700;
+        }
+    }
+
+    #content-pages-items {
+        display: grid;
+        grid-template-rows: auto;
+        grid-gap: 25px;
+
+        .content-pages-item {
+            height: 50px;
+            padding: 0 15px;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+            border-radius: 5px;
+
+            display: grid;
+            grid-template-columns: 1.75fr 1fr 0.5fr;
+            grid-gap: 25px;
+
+            align-items: center;
+
+            p {
+                font-weight: 600;
+
+                &.page-quick-link {
+                    cursor: pointer;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .content-pages-item-quickies {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+
+                .page-quick-link {
+                    color: rgba(0, 0, 0, 0.65);
+                    cursor: pointer;
+
+                    &:hover {
+                        color: rgba(0, 0, 0, 1);
+                    }
+
+                    &.page-delete {
+                        color: rgba(255, 0, 0, 0.65);
+
+                        &:hover {
+                            color: rgba(255, 0, 0, 1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#new-page {
+    width: 155px;
+    height: 40px;
+    float: right;
+    margin-top: 25px;
+
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    color: rgba(0, 0, 0, 1);
+    border: 3px solid rgba(0, 0, 0, 1);
+    border-radius: 5px;
+    background-color: transparent;
+
+    &:hover {
+        color: rgba(255, 255, 255, 1);
+        background-color: rgba(0, 0, 0, 1);
+    }
+}

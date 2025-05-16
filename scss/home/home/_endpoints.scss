@@ -1,0 +1,17 @@
+#endpoints {
+    width: 100%;
+    height: auto;
+
+    .container {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 25px;
+
+        @media screen and (min-width: 768px) {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+        }
+
+        @import 'endpoints/endpoint';
+    }
+}

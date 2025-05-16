@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login | {{ settings.title }} — {{ settings.slogan }}</title>
+        <link rel="stylesheet" href="/css/login/styles.css" />
+    </head>
+    <body>
+        <!-- THE LOGIN FORM -->
+        <form action="/auth/login" method="post" id="login">
+            <h1>Relay Login</h1>
+
+            <input type="text" name="username" id="username" placeholder="Username..." />
+            <input type="password" name="password" id="password" placeholder="Password..." />
+
+            <button type="submit">Login</button>
+        </form>
+        <!-- END LOGIN FORM -->
+    </body>
+</html>

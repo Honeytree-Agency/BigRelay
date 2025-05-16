@@ -1,0 +1,12 @@
+#callToAction {
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+
+    @media screen and (min-width: 850px) {
+        margin: 0;
+    }
+
+    @import 'callToAction/call';
+    @import 'callToAction/action';
+}

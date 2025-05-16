@@ -1,0 +1,113 @@
+#setting-tabs {
+    display: grid;
+    grid-template-rows: 50px auto;
+    grid-gap: 25px;
+
+    #setting-tab-switchers {
+        display: grid;
+        grid-template-columns: 175px 175px 175px;
+        grid-gap: 15px;
+        justify-content: center;
+
+        .setting-tab-switcher {
+            height: 50px;
+            width: 175px;
+            border: 3px solid rgba(0, 0, 0, 0.5);
+            color: rgba(0, 0, 0, 0.5);
+            background-color: transparent;
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 5px;
+
+            &:hover {
+                color: rgba(0, 0, 0, 1);
+                border-color: rgba(0, 0, 0, 1);
+            }
+
+            &.active {
+                color: rgba(255, 255, 255, 1);
+                background-color: rgba(0, 0, 0, 1);
+
+                &:hover {
+                    color: rgba(0, 0, 0, 1);
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+
+    .setting-tab {
+        &:not(.active) {
+            display: none;
+        }
+
+        .setting-tab-heading {
+            margin-bottom: 50px;
+            font-size: 20px;
+            font-weight: 600;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        form {
+            width: 100%;
+            max-width: 300px;
+            padding: 25px;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+            border-radius: 10px;
+            margin: 0 auto;
+
+            display: grid;
+            grid-template-rows: 50px 50px 50px;
+            grid-gap: 25px;
+
+            #id {
+                display: none;
+            }
+
+            input {
+                height: 50px;
+                border-radius: 5px;
+                padding: 0 15px;
+                outline: none;
+                border: none;
+                box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+
+                &:focus {
+                    box-shadow: 0 0 0 2px rgba(0, 0, 0, 1);
+                }
+            }
+
+            textarea {
+                height: 100px;
+                width: 100%;
+                padding: 15px;
+                resize: none;
+                overflow: auto;
+                border-radius: 5px;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+
+            button[type='submit'] {
+                width: 75%;
+                height: 50px;
+                margin: 0 auto;
+                background-color: rgba(0, 0, 0, 1);
+                color: rgba(255, 255, 255, 1);
+                font-weight: 700;
+                text-transform: uppercase;
+                border-radius: 5px;
+                cursor: pointer;
+
+                &:hover {
+                    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.25);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.endpointURL {
+    color: $white;
+    font-size: 18px;
+    font-weight: 700;
+    padding-bottom: 5px;
+    padding-right: 25px;
+    border-bottom: 2px solid $white70;
+    display: inline-block;
+    margin-top: 10px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+
+    i {
+        display: none;
+    }
+
+    &:hover i {
+        display: initial;
+    }
+}

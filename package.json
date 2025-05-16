@@ -1,0 +1,45 @@
+{
+    "author": {
+        "email": "hellow@honeytree.agency",
+        "name": "Honeytree Technologies",
+        "url": "https://www.honeytree.agency"
+    },
+    "dependencies": {
+        "bcrypt": "^5.1.0",
+        "body-parser": "^1.20.2",
+        "connect-sqlite3": "^0.9.13",
+        "cookie-parser": "^1.4.6",
+        "express": "^4.18.2",
+        "express-session": "^1.17.3",
+        "marked": "^5.0.2",
+        "nanoid": "^3.3.6",
+        "node-cron": "^3.0.2",
+        "nunjucks": "^3.2.4",
+        "passport": "^0.6.0",
+        "passport-local": "^1.0.0",
+        "sanitize-html": "^2.10.0",
+        "sass": "^1.62.1",
+        "slugify": "^1.6.6",
+        "sqlite3": "^5.1.6"
+    },
+    "description": "An Express frontend for the ActivityPub-Relay.",
+    "devDependencies": {
+        "nodemon": "^2.0.22"
+    },
+    "homepage": "https://bigrelay.social",
+    "license": "MIT",
+    "main": "index.js",
+    "name": "bigrelay.social",
+    "private": true,
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/honeytree-technologies/bigrelay"
+    },
+    "scripts": {
+        "build:sass": "sass scss:public/css",
+        "dev:sass": "sass --watch scss:public/css",
+        "dev:start": "nodemon -e js,html",
+        "start": "node ."
+    },
+    "version": "0.1.0"
+}

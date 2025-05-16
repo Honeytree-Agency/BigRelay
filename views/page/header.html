@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{{ page.title }} | {{ settings.title }} - {{ settings.slogan }}</title>
+        <link rel="stylesheet" href="/css/home/styles.css" />
+    </head>
+    <body>
+        <!-- THE HEADER -->
+        <header id="header">
+            <!-- THE NAVBAR -->
+            <section id="navbar">
+                <!-- THE CONTAINER -->
+                <div class="container">
+                    <!-- THE LOGO -->
+                    <section id="logo">
+                        <a href="/">{{ settings.title }}</a>
+                    </section>
+                    <!-- END LOGO -->
+
+                    <!-- THE TOGGLE -->
+                    <button id="navToggle" onclick="showMenu()">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                    </button>
+                    <!-- END TOGGLE -->
+                </div>
+                <!-- END CONTAINER -->
+            </section>
+            <!-- END NAVBAR -->
+
+            <!-- THE ACTION CENTER -->
+            <section id="actionCenter">
+                <!-- THE CONTAINER -->
+                <div class="container">
+                    <!-- THE TEXT CONTENT -->
+                    <section id="textContent">
+                        <!-- THE SLOGAN -->
+                        <h2 id="slogan">{{ settings.slogan }}</h2>
+                        <!-- END SLOGAN -->
+
+                        <!-- THE DESCRIPTION -->
+                        <h3 id="description">{{ settings.description }}</h3>
+                        <!-- END DESCRIPTION -->
+                    </section>
+                    <!-- END TEXT CONTENT -->
+
+                    <!-- THE CALL-TO-ACTION -->
+                    <section id="callToAction">
+                        <!-- THE CALL -->
+                        <p id="call">be awesome</p>
+                        <!-- END CALL -->
+
+                        <!-- THE ACTION -->
+                        <a href="{{ settings.sponsorLink }}" id="action"> {{ settings.sponsorText }} </a>
+                        <!-- END ACTION -->
+                    </section>
+                    <!-- END CALL-TO-ACTION -->
+                </div>
+                <!-- END CONTAINER -->
+            </section>
+            <!-- END ACTION CENTER -->
+
+            <!-- THE MENU -->
+            <nav id="menu">
+                <button id="toggleNav" onclick="hideMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <section id="menuPages">
+                    <a href="/" class="menu-item">Home</a>
+                    <a href="/about" class="menu-item">About Us</a>
+                    <!-- <a href="/contact" class="menu-item">Contact Us</a> -->
+                </section>
+
+                <section id="menuLegal">
+                    <a href="/privacy-policy" class="menu-item">Privacy Policy</a>
+                    <a href="/terms-of-service" class="menu-item">Terms of Service</a>
+                </section>
+
+                <section id="aesthetics">
+                    <div id="bar"></div>
+                    <div id="circle"></div>
+                    <div id="largeCircle"></div>
+                </section>
+            </nav>
+            <!-- END MENU -->
+        </header>
+        <!-- END HEADER -->

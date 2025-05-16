@@ -1,0 +1,14 @@
+#legal {
+    text-align: center;
+
+    @media screen and (min-width: 786px) {
+        text-align: right;
+    }
+
+    .menu-item {
+        color: $white80;
+        font-size: 14px;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+}
