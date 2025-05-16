@@ -33,7 +33,7 @@
     "private": true,
     "repository": {
         "type": "git",
-        "url": "https://github.com/honeytree-technologies/bigrelay"
+        "url": "https://github.com/honeytree-agency/bigrelay"
     },
     "scripts": {
         "build:sass": "sass scss:public/css",
